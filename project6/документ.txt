@@ -1,5 +1,5 @@
 pbkdf2_sha256$390000$BovndkIjnKtW9uiwbOajHU$yrcmz+hLEKPtnIJmh9HndlHWrbbLPsn0N6/kYikSnJY=
 
 Katya  GLs-YGY-8Gp-XR9   
-Vasya  S7v-8dr-4SV-3AF   serov0308@gmail.com
-Nika   iP4-DeE-rwg-m5t  BKN2021@yandex.ru
+Vasya  S7v-8dr-4SV-3AF  
+Nika   iP4-DeE-rwg-m5t  
