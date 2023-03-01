@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content%}
+<br>
+<br>
+<br>
+<center><h1>Полный список Компаний</h1></center>
+{% if request.method == 'GET' %}
+{% for i in data %}
+<div class="container">
+	<div class="card card-container">
+		<div class="card-body">
+			<h2 class="card-title">{{i.company_name}}</h2>
+			<p class="card-text">{{i.company_description}}</p>
+			<form action="{% url 'showcomp' i.id_company %}">
+				<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Управление кампанией</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

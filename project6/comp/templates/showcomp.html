@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content%}
+<br>
+<br>
+<br>
+{% for i in data %}
+
+<div class="container">
+	<div class="row">
+		<!--Описание кампании-->
+		<div class="col-sm">
+			<div class="card card-container">
+				<div class="card">
+					<h4 class="card-title">{{ i.company_name }}</h4>
+					<p class="card-text">{{i.company_description}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm">
+			<!--Дома кампании-->
+			<div class="card card-container">
+				<div class="card-body">
+					<h5 class="card-title">Дома учавствующие в кампании:</h5>
+					{% for p in all_data %}
+					{% if p.home_comp != NULL %}
+					<p class="card-text">{{p.home_comp.address}}</p>
+					{% else %}
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm">
+			<!--Обходы-->
+			<div class="card card-container">
+				<div class="card-body">
+					<h5 class="card-title">Обходы кампании:</h5>
+					{% for p in all_data %}
+					{% if p.bupass_comp_id != NULL %}
+					<a href="{% url 'showbupass' p.bupass_comp_id %}"><p class="card-text">{{p.bupass_comp.date}} {{p.bupass_comp.time}} {{p.bupass_comp.reaction}}</p></a>
+					{% else %}
+
+					{% endif %}
+                	{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<form action="{% url 'editcomp' i.id_company %}">
+		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Редактировать</button>
+	</form>
+</div>
+
+{% endfor %}
+
+{% endblock %}
