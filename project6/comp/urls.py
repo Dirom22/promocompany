@@ -26,7 +26,7 @@ urlpatterns = [
     path(' ', views.comps, name='comps'),
     path('createcomp', views.createcomp, name='createcomp'),
     path('mycomp', views.mycomp, name='mycomp'),
-    
+    path('formbupass/<int:id_company>', views.formbupass, name='formbupass'),
     path('comps/<int:id_company>', views.showcomp, name='showcomp'),
     path('editcomp/<int:id_company>', views.editcomp, name='editcomp'),
     path('homeedit/<int:id_company>', views.homeedit, name='homeedit'),
